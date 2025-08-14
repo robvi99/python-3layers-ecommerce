@@ -1,0 +1,93 @@
+{
+    "info": {
+        "name": "E-commerce API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Register",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"username\": \"testuser\", \"password\": \"testpass\", \"role\": \"customer\"}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{baseUrl}}/api/register",
+                    "host": ["{{baseUrl}}"],
+                    "path": ["api", "register"]
+
+                }
+            }
+        },
+        {
+            "name": "Login",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"username\": \"testuser\", \"password\": \"testpass\"}",
+                    "options": {
+                        "raw": {
+                            "raw": {
+                                "language": "json"
+                            }
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{baseUrl}}/api/login",
+                    "host": ["{{baseUrl}}"],
+                    "path": ["api", "login"]
+                }
+            }
+        },
+        {
+            "name": "Get Products",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url":
+                {
+                    "raw": "{{baseUrl}}/api/products",
+                    "host": ["{{baseUrl}}"],
+                    "path": ["api", "products"]
+                }
+            }
+        },
+        {
+            "name": "Add to Cart",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"product_id\": 1, \"quantity\": 2}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{baseUrl}}/api/cart",
+                    "host": ["{{baseUrl}}"],
+                    "path": ["api", "cart"]
+                }
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "baseUrl",
+            "value": "http://localhost:5000"
+        }
+    ]
+}
